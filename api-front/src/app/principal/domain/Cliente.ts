@@ -4,5 +4,6 @@ export class Cliente{
     nome:string = '';
     idade:number = 0;
     cidade:string = '';
+    estado:string = '';
 
 }

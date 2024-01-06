@@ -14,7 +14,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Nome</th>
             <th>Idade</th>
             <th>Cidade</th>
@@ -22,5 +22,13 @@
         </tr>
     </thead>
 
-    <tbody></tbody>
+    <tbody>
+        <tr *ngFor="let c of clientes">
+            <td>{{ c.codigo }}</td>
+            <td>{{ c.nome }}</td>
+            <td>{{ c.idade }}</td>
+            <td>{{ c.cidade }}</td>
+            <td><button class="btn btn-success">Selecionar</button></td>
+        </tr>
+    </tbody>
 </table>

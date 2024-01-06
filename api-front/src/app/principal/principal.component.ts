@@ -29,4 +29,8 @@ export class PrincipalComponent {
      .subscribe(ListaClientes => this.clientes = ListaClientes);
   }
 
+  // Inicialização
+  ngOnInit(){
+    this.get();
+  }
 }
