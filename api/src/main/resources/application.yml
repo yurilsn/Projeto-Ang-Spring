@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/clientedb}
+    driver-class-name: org.postgresql.Driver
+    username: usuario
+    password: 87654321
+    sqlScriptEncoding: UTF-8
+    initialization-mode: always
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
