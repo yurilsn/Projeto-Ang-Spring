@@ -5,13 +5,11 @@
     <input type="number" placeholder="Idade"  class="form-control" name="idade"  [(ngModel)]="cliente.idade">
     <input type="text"   placeholder="Cidade" class="form-control" name="cidade" [(ngModel)]="cliente.cidade">
 
-    <input type="button" value="Cadastrar" *ngIf="botaoCadastro" class="btn btn-primary">
-    <input type="button" value="Alterar"   *ngIf="!botaoCadastro" class="btn btn-warning">
-    <input type="button" value="Remover"   *ngIf="!botaoCadastro" class="btn btn-danger">
-    <input type="button" value="Cancelar"  *ngIf="!botaoCadastro" class="btn btn-secondary">
+    <input type="button" value="Cadastrar" *ngIf="botaoCadastro"  class="btn btn-primary"   (click)="post()">
+    <input type="button" value="Alterar"   *ngIf="!botaoCadastro" class="btn btn-warning"   >
+    <input type="button" value="Remover"   *ngIf="!botaoCadastro" class="btn btn-danger"    >
+    <input type="button" value="Cancelar"  *ngIf="!botaoCadastro" class="btn btn-secondary" >
 </form>
-
-<h1>{{ cliente | json }}</h1>
 
 <table class="table">
     <thead>

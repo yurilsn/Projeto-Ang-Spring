@@ -22,6 +22,9 @@ export class PrincipalComponent {
   // Json Clientes
   clientes:Cliente[] = [];
 
+  // Visibilidade da tabela
+  tabela: boolean = true;
+
   //Construtor do service
   constructor(private service:ClienteService){}
 
@@ -29,6 +32,22 @@ export class PrincipalComponent {
   get(): void {
      this.service.findAll()
      .subscribe(ListaClientes => this.clientes = ListaClientes);
+  }
+
+  //Post
+  post(): void {
+    this.service.save(this.cliente)
+    .subscribe(cliente => { 
+      // Cadastrando cliente no vetor do front
+      this.clientes.push(cliente);
+
+      //Limpar Formulário
+      this.cliente = new Cliente(); 
+
+      // Mensagem
+      alert('Cliente cadastrado com sucesso')
+
+     });
   }
 
   // Inicialização
