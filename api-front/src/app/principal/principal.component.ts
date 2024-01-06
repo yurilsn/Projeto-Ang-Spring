@@ -13,6 +13,8 @@ import { ClienteService } from '../service/cliente.service';
 })
 export class PrincipalComponent {
 
+  // Objeto Cliente
+  cliente = new Cliente();
 
   //Visibilidade de botões
   botaoCadastro:boolean = true; 
