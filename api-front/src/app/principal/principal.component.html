@@ -6,12 +6,14 @@
     <input type="text"   placeholder="Cidade" class="form-control" name="cidade" [(ngModel)]="cliente.cidade">
 
     <input type="button" value="Cadastrar" *ngIf="botaoCadastro"  class="btn btn-primary"   (click)="post()">
-    <input type="button" value="Alterar"   *ngIf="!botaoCadastro" class="btn btn-warning"   >
+    <input type="button" value="Alterar"   *ngIf="!botaoCadastro" class="btn btn-warning"   (click)="put()" >
     <input type="button" value="Remover"   *ngIf="!botaoCadastro" class="btn btn-danger"    >
     <input type="button" value="Cancelar"  *ngIf="!botaoCadastro" class="btn btn-secondary" >
 </form>
 
-<table class="table">
+<h1>{{ cliente | json }}</h1>
+
+<table class="table" *ngIf="tabela">
     <thead>
         <tr>
             <th>ID</th>
@@ -28,7 +30,7 @@
             <td>{{ c.nome }}</td>
             <td>{{ c.idade }}</td>
             <td>{{ c.cidade }}</td>
-            <td><button class="btn btn-success">Selecionar</button></td>
+            <td><button class="btn btn-success" (click)="selecionarCliente(c.codigo)" routerLink="/{{ c.codigo }}">Selecionar</button></td>
         </tr>
     </tbody>
 </table>
