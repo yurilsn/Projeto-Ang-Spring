@@ -123,6 +123,18 @@ export class PrincipalComponent {
     this.tabela = false;
   } 
 
+  // Botão cancelar
+  cancelar(): void{
+    //Limpar formulário
+    this.cliente = new Cliente();
+
+    // Visibilidade dos botões
+    this.botaoCadastro = true;
+
+    //Visibilidade da tabela
+    this.tabela = true;
+  }
+
   // Inicialização
   ngOnInit(){
     this.get();

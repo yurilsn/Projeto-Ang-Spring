@@ -8,7 +8,7 @@
     <input type="button" value="Cadastrar" *ngIf="botaoCadastro"  class="btn btn-primary"   (click)="post()">
     <input type="button" value="Alterar"   *ngIf="!botaoCadastro" class="btn btn-warning"   (click)="put()" >
     <input type="button" value="Remover"   *ngIf="!botaoCadastro" class="btn btn-danger"    (click)="delete()">
-    <input type="button" value="Cancelar"  *ngIf="!botaoCadastro" class="btn btn-secondary" >
+    <input type="button" value="Cancelar"  *ngIf="!botaoCadastro" class="btn btn-secondary" (click)="cancelar()">
 </form>
 
 <h1>{{ cliente | json }}</h1>
