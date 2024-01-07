@@ -7,7 +7,7 @@
 
     <input type="button" value="Cadastrar" *ngIf="botaoCadastro"  class="btn btn-primary"   (click)="post()">
     <input type="button" value="Alterar"   *ngIf="!botaoCadastro" class="btn btn-warning"   (click)="put()" >
-    <input type="button" value="Remover"   *ngIf="!botaoCadastro" class="btn btn-danger"    >
+    <input type="button" value="Remover"   *ngIf="!botaoCadastro" class="btn btn-danger"    (click)="delete()">
     <input type="button" value="Cancelar"  *ngIf="!botaoCadastro" class="btn btn-secondary" >
 </form>
 
@@ -30,7 +30,7 @@
             <td>{{ c.nome }}</td>
             <td>{{ c.idade }}</td>
             <td>{{ c.cidade }}</td>
-            <td><button class="btn btn-success" (click)="selecionarCliente(c.codigo)" routerLink="/{{ c.codigo }}">Selecionar</button></td>
+            <td><button class="btn btn-success" (click)="selecionarCliente(c.codigo - 1)" >Selecionar</button></td>
         </tr>
     </tbody>
 </table>

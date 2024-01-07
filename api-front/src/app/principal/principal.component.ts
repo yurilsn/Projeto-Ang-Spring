@@ -53,8 +53,8 @@ export class PrincipalComponent {
 
   //Put
   put():void{
-    const id = Number(this.rota.snapshot.paramMap.get("id"))
-    this.service.update(this.cliente, id)
+    // const id = Number(this.rota.snapshot.paramMap.get(":id"));
+    this.service.update(this.cliente, this.cliente.codigo)
     .subscribe(cliente => {
     
     // Obter index do vetor
@@ -65,6 +65,9 @@ export class PrincipalComponent {
     // Alterando os dados da lista de clientes para alteração no front
     this.clientes[posicao] = cliente;
 
+    // Limpando formulário
+    this.cliente = new Cliente();
+
     // Visibilidade dos botões
     this.botaoCadastro = true;
 
@@ -73,6 +76,35 @@ export class PrincipalComponent {
 
     // Mensagem
     alert('Cliente alterado com sucesso')
+
+    })
+  }
+
+  // Delete
+  delete():void{
+    // const id = Number(this.rota.snapshot.paramMap.get(":id"));
+    this.service.remove(this.cliente.codigo)
+    .subscribe(cliente => {
+    
+    // Obter index do vetor
+    let posicao = this.clientes.findIndex(obj => {
+      return obj.codigo == this.cliente.codigo;
+    });
+
+    // Removendo cliente
+    this.clientes.splice(posicao, 1)
+
+    // Limpando formulário
+    this.cliente = new Cliente();
+    
+    // Visibilidade dos botões
+    this.botaoCadastro = true;
+
+    // Visibilidade da tabela
+    this.tabela = true;
+
+    // Mensagem
+    alert('Cliente removido com sucesso')
 
     })
   }

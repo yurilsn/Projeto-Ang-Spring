@@ -25,5 +25,9 @@ export class ClienteService {
   update(cliente:Cliente, id:number):Observable<Cliente>{
     return this.http.put<Cliente>(`${this.url}/${id}`, cliente);     
   }
+
+  remove(id:number): Observable<void>{
+    return this.http.delete<void>(`${this.url}/${id}`)
+  }
 }
 
